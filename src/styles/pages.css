@@ -1,0 +1,111 @@
+.page-container {
+    margin-left: 260px; /* Offset for the sidebar */
+    padding: 20px;
+    background-color: #f9fafb;
+    min-height: calc(100vh - 64px); /* Account for navbar height */
+  }
+  
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin-top: 20px;
+  }
+  
+  .form-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-container input, .form-container select, .form-container textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-container button {
+    background-color: #0d6efd;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+
+
+
+
+
+
+
+  .page-container {
+    padding: 2rem;
+  }
+  
+  .analytics-section {
+    margin-bottom: 2rem;
+  }
+  
+  .analytics-cards {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .card {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-management table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .user-management th, .user-management td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+  }
+  
+  .user-management th {
+    background-color: #34495e;
+    color: white;
+  }
+  
+  .user-management button {
+    margin-right: 0.5rem;
+    padding: 0.3rem 0.5rem;
+    border: none;
+    background-color: #1abc9c;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .user-management button:hover {
+    background-color: #16a085;
+  }
+  
