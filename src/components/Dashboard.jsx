@@ -1,49 +1,64 @@
-import { useState } from "react";
-import { FaUsers, FaFileAlt, FaCalendarCheck, FaUserShield } from "react-icons/fa";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaUsers, FaFileAlt, FaCalendarCheck, FaClinicMedical, FaUserClock, FaBriefcase, FaSun, FaMoon } from "react-icons/fa";
+import "../styles/dashboard.css";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
+  useEffect(() => {
+    document.body.className = theme; 
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   const handleCardClick = (route) => {
-    navigate(route); // Navigate to the specific route
+    navigate(route);
   };
 
   return (
-    <main className="dashboard bg-gray-100 p-6">
-      <h2 className="text-2xl font-bold text-blue-600 mb-6">Dashboard</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div
-          className="card bg-white shadow-lg rounded-lg p-4 cursor-pointer hover:bg-blue-100"
-          onClick={() => handleCardClick("/patients")}
-        >
-          <FaUsers className="text-blue-600 text-3xl mb-2" />
-          <h3 className="text-xl font-semibold">Patients</h3>
-          <p className="text-gray-600">100 Registered</p>
+    <main className="dashboard-container">
+      <div className="dashboard-header">
+        <h2 className="dashboard-title">Dashboard</h2>
+        {/* <button className="theme-toggle" onClick={toggleTheme}>
+          {theme === "light" ? <FaMoon /> : <FaSun />}
+        </button> */}
+      </div>
+
+      <div className="dashboard-grid">
+        <div className="dashboard-card" onClick={() => handleCardClick("/doctors")}>
+          <FaUsers className="dashboard-icon" />
+          <h3 className="dashboard-card-title">Doctors</h3>
+          <p className="dashboard-card-text">15 Available</p>
         </div>
-        <div
-          className="card bg-white shadow-lg rounded-lg p-4 cursor-pointer hover:bg-blue-100"
-          onClick={() => handleCardClick("/reports")}
-        >
-          <FaFileAlt className="text-green-600 text-3xl mb-2" />
-          <h3 className="text-xl font-semibold">Reports</h3>
-          <p className="text-gray-600">50 Generated</p>
+        <div className="dashboard-card" onClick={() => handleCardClick("/appointments")}>
+          <FaCalendarCheck className="dashboard-icon" />
+          <h3 className="dashboard-card-title">Appointments</h3>
+          <p className="dashboard-card-text">20 Scheduled</p>
         </div>
-        <div
-          className="card bg-white shadow-lg rounded-lg p-4 cursor-pointer hover:bg-blue-100"
-          onClick={() => handleCardClick("/appointments")}
-        >
-          <FaCalendarCheck className="text-yellow-600 text-3xl mb-2" />
-          <h3 className="text-xl font-semibold">Appointments</h3>
-          <p className="text-gray-600">20 Scheduled</p>
+        <div className="dashboard-card" onClick={() => handleCardClick("/clinics")}>
+          <FaClinicMedical className="dashboard-icon" />
+          <h3 className="dashboard-card-title">Clinics</h3>
+          <p className="dashboard-card-text">10 Locations</p>
         </div>
-        <div
-          className="card bg-white shadow-lg rounded-lg p-4 cursor-pointer hover:bg-blue-100"
-          onClick={() => handleCardClick("/Admin")}
-        >
-          <FaUserShield className="text-red-600 text-3xl mb-2" />
-          <h3 className="text-xl font-semibold">Users</h3>
-          <p className="text-gray-600">5 Admins</p>
+        <div className="dashboard-card" onClick={() => handleCardClick("/working-hours")}>
+          <FaUserClock className="dashboard-icon" />
+          <h3 className="dashboard-card-title">Working Hours</h3>
+          <p className="dashboard-card-text">40 Weekly Hours</p>
+        </div>
+        <div className="dashboard-card" onClick={() => handleCardClick("/services")}>
+          <FaBriefcase className="dashboard-icon" />
+          <h3 className="dashboard-card-title">Services</h3>
+          <p className="dashboard-card-text">5 Specialties</p>
+        </div>
+        <div className="dashboard-card" onClick={() => handleCardClick("/aboutus")}>
+          <FaFileAlt className="dashboard-icon" />
+          <h3 className="dashboard-card-title">Users</h3>
+          <p className="dashboard-card-text">View registered Users</p>
         </div>
       </div>
     </main>

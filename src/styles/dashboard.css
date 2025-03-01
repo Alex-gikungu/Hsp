@@ -1,0 +1,138 @@
+/*/* Light Mode */
+body.light {
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Dark Mode */
+body.dark {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: inherit;
+  margin-left: auto;
+}
+
+/* Dark mode adjustments */
+body.dark .navbar {
+  background: #222;
+  color: #fff;
+}
+
+body.dark a {
+  color: #ddd;
+}
+
+body.dark .dashboard-card {
+  background: rgba(50, 50, 50, 0.8);
+}
+
+body.dark .dashboard-card-title,
+body.dark .dashboard-card-text {
+  color: #fff;
+}
+
+  
+  h1, h2, h3 {
+    margin: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+
+/* Dashboard Container */
+.dashboard-container {
+  margin-left: 250px; /* Sidebar width */
+  padding: 2rem;
+  background-image: url("https://cdn.pixabay.com/photo/2016/11/08/05/29/surgery-1807541_1280.jpg"); /* Add background image */
+  background-size: cover; /* Ensure the image covers the entire container */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  min-height: calc(100vh - 60px); /* Exclude navbar height */
+  margin-top: 60px;
+  overflow-x: hidden;
+}
+.dashboard-container h2 {
+  font-size: 2rem;
+  color:#007bff;
+  margin-bottom: 1rem;
+}
+/* Ensure content is above the overlay */
+.dashboard-title,
+.dashboard-grid {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 2rem; /* Space between cards */
+}
+
+/* Dashboard Card */
+.dashboard-card {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.dashboard-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Dashboard Icon */
+.dashboard-icon {
+    font-size: 36px;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+/* Dashboard Card Title */
+.dashboard-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+/* Dashboard Card Text */
+.dashboard-card-text {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* One column on small screens */
+    }
+}
+

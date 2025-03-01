@@ -1,0 +1,160 @@
+/* General container styling */
+.reports-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: var(--bg-color, #fff);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  color: var(--text-color, #333);
+}
+
+/* Page title */
+.page-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--heading-color, #333);
+}
+
+/* Filter and search sections */
+.filter-section,
+.search-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: var(--secondary-bg, #f8f9fa);
+  border-radius: 6px;
+}
+
+.filter-section label {
+  font-weight: bold;
+  color: var(--text-color, #333);
+}
+
+.filter-section select,
+.search-section input {
+  padding: 8px;
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: 5px;
+  font-size: 14px;
+  background: var(--input-bg, #fff);
+  color: var(--text-color, #333);
+}
+
+/* Report section styling */
+.report-section {
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--secondary-bg, #f8f9fa);
+  border-radius: 6px;
+}
+
+.report-section h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--heading-color, #444);
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: var(--table-bg, #fff);
+  color: var(--text-color, #333);
+}
+
+table thead {
+  background: #007bff;
+  color: white;
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color, #ddd);
+}
+
+table tbody tr:hover {
+  background: var(--hover-bg, #f1f1f1);
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  margin: 0 5px;
+  border: none;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button:hover {
+  background: #0056b3;
+}
+
+/* Export buttons */
+.export-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Base button styling */
+.export-btn {
+  background-color: #007bff; /* Blue */
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.export-btn:hover {
+  opacity: 0.8;
+}
+
+/* PDF button */
+.pdf-btn {
+  background-color: #dc3545; /* Red */
+}
+
+/* CSV button */
+.csv-btn {
+  background-color: #28a745; /* Green */
+}
+
+/* Ensure the CSVLink does not interfere with the button */
+.export-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Dark Mode Styling */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+    --secondary-bg: #292929;
+    --border-color: #444;
+    --input-bg: #333;
+    --table-bg: #292929;
+    --hover-bg: #3a3a3a;
+  }
+}

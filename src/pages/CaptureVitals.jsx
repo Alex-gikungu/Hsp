@@ -1,14 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/pages.css";
 
-const CaptureVitals = () => {
+const CaptureVitals = ({ userRole }) => {
   const [formData, setFormData] = useState({
     patient_id: "",
     blood_pressure: "",
     temperature: "",
     pulse_rate: "",
   });
+
+  const [vitalsList, setVitalsList] = useState([]);
+
+  // Fetch vitals for doctors and admins
+  useEffect(() => {
+    if (userRole === "doctor" || userRole === "admin") {
+      fetchVitals();
+    }
+  }, [userRole]);
+
+  const fetchVitals = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/vitals");
+      setVitalsList(response.data);
+    } catch (error) {
+      console.error("Error fetching vitals:", error);
+    }
+  };
 
   // Handle input change
   const handleChange = (e) => {
@@ -23,6 +41,9 @@ const CaptureVitals = () => {
       const response = await axios.post("http://localhost:5000/vitals", formData);
       alert("Vitals recorded successfully!");
       setFormData({ patient_id: "", blood_pressure: "", temperature: "", pulse_rate: "" }); // Clear form
+      if (userRole === "doctor" || userRole === "admin") {
+        fetchVitals(); // Refresh the list
+      }
     } catch (error) {
       console.error("Error saving vitals:", error);
       alert("Failed to save vitals.");
@@ -73,6 +94,32 @@ const CaptureVitals = () => {
           Save Vitals
         </button>
       </form>
+
+      {(userRole === "doctor" || userRole === "admin") && (
+        <div className="vitals-list">
+          <h3>Recorded Vitals</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Patient ID</th>
+                <th>Temperature (°C)</th>
+                <th>Blood Pressure</th>
+                <th>Pulse Rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              {vitalsList.map((vital) => (
+                <tr key={vital.id}>
+                  <td>{vital.patient_id}</td>
+                  <td>{vital.temperature}</td>
+                  <td>{vital.blood_pressure}</td>
+                  <td>{vital.pulse_rate}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,0 +1,126 @@
+/* General Styles */
+.clinics-container {
+  font-family: 'Roboto', sans-serif;
+  padding: 40px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.clinics-title {
+  font-size: 2.5rem;
+  color: #2563eb;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+/* Clinic List Styles */
+.clinics-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Clinic Card Styles */
+.clinic-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clinic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.clinic-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.clinic-content {
+  padding: 20px;
+}
+
+.clinic-name {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.clinic-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.clinic-schedule {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+/* Book Button Styles */
+.book-button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.book-button:hover {
+  background-color: #218838;
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .clinics-container {
+    padding: 20px;
+  }
+
+  .clinics-title {
+    font-size: 2rem;
+  }
+
+  .clinic-card {
+    width: 100%;
+  }
+}

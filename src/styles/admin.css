@@ -1,0 +1,144 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Dashboard Heading */
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  color: #007bff;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+/* Responsive Grid */
+@media (min-width: 768px) {
+  .grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Dashboard Cards */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #eaf2ff;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Icons in Cards */
+.card svg {
+  font-size: 40px;
+}
+
+/* Pending Approvals Section */
+.pending-approvals {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.pending-approvals h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Approval List */
+.approval-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Individual Approval Item */
+.approval-item {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.approval-item:hover {
+  background: #e1ecff;
+}
+
+/* Approval Buttons */
+.approval-buttons button {
+  border: none;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 8px;
+}
+
+/* Approve Button */
+.approve {
+  background-color: #28a745;
+  color: white;
+}
+
+.approve:hover {
+  background-color: #218838;
+}
+
+/* Reject Button */
+.reject {
+  background-color: #dc3545;
+  color: white;
+}
+
+.reject:hover {
+  background-color: #c82333;
+}
+
+/* No Requests Message */
+.no-requests {
+  text-align: center;
+  color: gray;
+  font-style: italic;
+}

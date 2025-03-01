@@ -1,0 +1,61 @@
+/* Container */
+.appointments-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title */
+.appointments-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Table Wrapper */
+.appointments-table-wrapper {
+  overflow-x: auto;
+}
+
+/* Custom Table */
+.custom-appointments-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.custom-appointments-table th,
+.custom-appointments-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.custom-appointments-table th {
+  background-color: #007bff;
+  color: white;
+}
+
+.custom-appointments-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.custom-appointments-table td {
+  color: #555;
+}
+
+/* No Appointments Message */
+.no-appointments-message {
+  text-align: center;
+  font-size: 16px;
+  color: #777;
+  margin-top: 20px;
+}

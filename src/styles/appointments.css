@@ -1,59 +1,194 @@
+/* General Page Styling */
 .page-container {
-  max-width: 500px;
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f0f8ff, #dff6ff);
+  font-family: "Poppins", sans-serif;
   padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Title Styling */
 .page-title {
-  text-align: center;
-  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
-.booking-form {
-  padding: 20px;
-  background: #fff;
+/* Back Button */
+.back-button {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 10px 15px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
+.back-button:hover {
+  background: #cc0000;
+  transform: scale(1.1);
+}
+
+/* Appointment Container */
+.appointment-container {
+  display: flex;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+/* Booking Form (Card) - Enlarged */
+.booking-form {
+  flex: 1.5;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out;
+}
+
+.booking-form:hover {
+  transform: translateY(-5px);
+}
+
+/* Form Group */
 .form-group {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 15px;
 }
 
 .form-group label {
-  display: block;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 5px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 8px;
+/* Input & Textarea */
+input,
+textarea {
+  padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border 0.3s ease-in-out;
 }
 
+input:focus,
+textarea:focus {
+  border: 1px solid #007bff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Submit Button */
 .submit-button {
-  width: 100%;
-  padding: 10px;
   background: #007bff;
-  color: #fff;
+  color: white;
   border: none;
+  padding: 12px;
+  font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .submit-button:hover {
   background: #0056b3;
+  transform: scale(1.05);
 }
 
-.message {
-  text-align: center;
-  font-size: 16px;
-  color: green;
+/* Extra Information Section */
+.extra-info {
+  margin-top: 20px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.extra-info h3 {
+  font-size: 18px;
+  color: #333;
   margin-bottom: 10px;
+}
+
+.extra-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.extra-info ul li {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+/* Calendar Styling */
+.calendar-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.react-calendar {
+  max-width: 100%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.react-calendar:hover {
+  transform: scale(1.05);
+}
+
+/* Calendar Days Styling */
+.react-calendar__tile {
+  padding: 10px;
+  border-radius: 6px;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.react-calendar__tile:hover {
+  background: #007bff;
+  color: white;
+  transform: scale(1.1);
+}
+
+.react-calendar__tile--active {
+  background: #ff4d4d;
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .appointment-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .booking-form {
+    width: 100%;
+  }
+
+  .calendar-container {
+    width: 100%;
+  }
 }

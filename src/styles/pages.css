@@ -1,106 +1,153 @@
+/* Page Container with Background Image */
 .page-container {
-    margin-left: 260px; /* Offset for the sidebar */
-    padding: 20px;
-    background-color: #f9fafb;
-    min-height: calc(100vh - 64px); /* Account for navbar height */
-  }
-  
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin-top: 20px;
-  }
-  
-  .form-container label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .form-container input, .form-container select, .form-container textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .form-container button {
-    background-color: #0d6efd;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .form-container button:hover {
-    background-color: #0056b3;
-  }
-  
-  .btn {
-    padding: 10px 15px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
-  }
-  
+  margin-left: 10px;
+  padding: 20px;
+  min-height: calc(100vh - 64px);
+  background: url('https://cdn.pixabay.com/photo/2016/11/08/05/29/surgery-1807541_1280.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+/* Form Container - Sleek Modern Look */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px); /* Frosted Glass Effect */
+}
 
-  .page-container {
-    padding: 2rem;
-  }
-  
-  .analytics-section {
-    margin-bottom: 2rem;
-  }
-  
-  .analytics-cards {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .card {
-    background-color: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-  
-  .user-management table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 1rem;
-  }
-  
-  .user-management th, .user-management td {
-    border: 1px solid #ddd;
-    padding: 0.5rem;
-    text-align: left;
-  }
-  
-  .user-management th {
-    background-color: #34495e;
-    color: white;
-  }
-  
-  .user-management button {
-    margin-right: 0.5rem;
-    padding: 0.3rem 0.5rem;
-    border: none;
-    background-color: #1abc9c;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .user-management button:hover {
-    background-color: #16a085;
-  }
-  
+/* Form Labels */
+.form-container label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #222;
+  font-size: 15px;
+}
+
+/* Input Fields */
+.form-container input,
+.form-container select,
+.form-container textarea {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+}
+
+.form-container input:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+/* Buttons - Sleek and Interactive */
+.form-container button {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.form-container button:hover {
+  background: linear-gradient(135deg, #0056b3, #003d82);
+  transform: translateY(-2px);
+}
+
+/* Generic Button Style */
+.btn {
+  padding: 12px 18px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Analytics Section */
+.analytics-section {
+  margin-bottom: 2rem;
+}
+
+/* Responsive Cards */
+.analytics-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* User Management Table */
+.user-management table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.user-management th,
+.user-management td {
+  border: 1px solid #ddd;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.user-management th {
+  background: #007bff;
+  color: white;
+}
+
+.user-management button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  background: #1abc9c;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.user-management button:hover {
+  background: #16a085;
+}

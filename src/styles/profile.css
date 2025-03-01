@@ -1,0 +1,149 @@
+/* profile.css */
+
+.profile-page {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--profile-background-color);
+  color: var(--profile-text-color);
+}
+
+.profile-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-message {
+  color: red;
+  text-align: center;
+}
+
+.profile-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #007bff; 
+}
+
+.profile-section-title {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #007bff; /* Underline for section titles */
+  padding-bottom: 5px;
+}
+
+.profile-info {
+  margin-bottom: 20px;
+}
+
+.profile-appointments {
+  list-style-type: none;
+  padding: 0;
+}
+
+.profile-appointment-item {
+  background-color: #f8f9fa; /* Light background for appointment items */
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-no-appointments {
+  color: #6c757d; /* Muted color for no appointments message */
+}
+
+/* Dark Mode Styles */
+:root {
+  --profile-background-color: #ffffff;
+  --profile-text-color: #333333;
+}
+
+body.dark-mode {
+  --profile-background-color: #333333;
+  --profile-text-color: #ffffff;
+}
+
+.profile-card.dark-mode {
+  background-color: #444444; /* Dark background for profile card */
+  border: 1px solid #555555; /* Dark border for profile card */
+}
+
+.profile-appointment-item.dark-mode {
+  background-color: #555555; /* Dark background for appointment items */
+  border: 1px solid #666666; /* Dark border for appointment items */
+}
+
+.profile-page.dark-mode {
+  background-color: var(--profile-background-color);
+  color: var(--profile-text-color);
+}
+
+/* Pie Chart Container (Right Side) */
+.profile-chart {
+  width: 50%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Chart Title */
+.chart-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Increase Pie Chart Size */
+.pie-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* Legend Styling */
+.recharts-legend-wrapper {
+  margin-top: 20px !important; /* Ensures spacing */
+}
+
+.recharts-legend-item {
+  margin: 10px 0; /* Adds space between legend items */
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .profile-page {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-card, .profile-chart {
+    width: 90%;
+  }
+
+  .pie-chart {
+    width: 100%;
+  }
+}
+

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "../styles/patient.css";
 
+
 const Patients = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
   const [patients, setPatients] = useState([]);
 
   useEffect(() => {
@@ -10,6 +13,13 @@ const Patients = () => {
       .then((data) => setPatients(data))
       .catch((error) => console.error("Error fetching patients:", error));
   }, []);
+
+
+  // Function to handle the back button click
+  const handleBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
 
   return (
     <div className="page-container">
@@ -41,6 +51,10 @@ const Patients = () => {
      </tbody>
 
       </table>
+
+      <button onClick={handleBack} className="back-button">
+        Back
+      </button>
     </div>
   );
 };

@@ -1,26 +1,109 @@
-/* patient.css */
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f7fc;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page Container */
 .page-container {
-  width: 80%;
-  margin: auto;
+  max-width: 900px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
+/* Heading */
 h2 {
-  color: #333;
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
   margin-bottom: 20px;
 }
 
+/* Table Styling */
 .table-container {
   width: 100%;
   border-collapse: collapse;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.table-container th, .table-container td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: left;
+/* Table Header */
+.table-container thead {
+  background-color: #007bff;
+  color: white;
 }
 
 .table-container th {
-  background-color: #f4f4f4;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Table Rows */
+.table-container tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition:background-color 0.3s ease;
+}
+
+.table-container tbody tr:hover {
+  background-color: #f0f8ff;
+}
+
+/* Table Data Cells */
+.table-container td {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* No Patients Message */
+.table-container td[colspan="4"] {
+  text-align: center;
+  font-style: italic;
+  color: gray;
+}
+
+/* Back Button */
+.back-button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .table-container {
+      font-size: 12px;
+  }
+
+  .table-container th,
+  .table-container td {
+      padding: 8px;
+  }
+
+  .back-button {
+      width: 100%;
+      padding: 12px;
+  }
 }

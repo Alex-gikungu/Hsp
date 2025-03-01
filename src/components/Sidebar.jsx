@@ -1,6 +1,7 @@
 import React from "react";
-import { FaTachometerAlt, FaUserPlus, FaNotesMedical, FaCog, FaHeartbeat, FaPills, FaUserShield } from "react-icons/fa";
+import { FaTachometerAlt, FaUserPlus, FaNotesMedical, FaCog, FaHeartbeat, FaPills, FaUserShield, FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import "../styles/sidebar.css";
 
 const Sidebar = () => {
   return (
@@ -11,6 +12,12 @@ const Sidebar = () => {
           <Link to="/dashboard" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
             <FaTachometerAlt />
             <span>Dashboard</span>
+          </Link>
+        </li>
+        <li>
+          <Link to="/profile" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600">
+            <FaUserCircle />
+            <span>Profile</span>
           </Link>
         </li>
         <li>
