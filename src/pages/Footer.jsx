@@ -9,9 +9,9 @@ const Footer = () => {
         <div className="footer-info">
           <h3>Contact Us</h3>
           <p><FaMapMarkerAlt /> kericho Hospital St, City, kericho</p>
-          <p><FaPhone /> (+235) 112043557</p>
           <p><FaEnvelope /> kerichohsp@hospital.com</p>
-          <p><FaClock /> Mon - Fri: 8 AM - 8 PM</p>
+          <p><FaPhone /> (+254) 112-043-557</p>
+          <p><FaClock /> Mon - Sun : 8 AM - 8 PM</p>
         </div>
         <div className="footer-links">
           <h3>Quick Links</h3>

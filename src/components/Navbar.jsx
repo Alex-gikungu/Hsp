@@ -1,5 +1,6 @@
 import { FaUserCircle, FaSun, FaMoon } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
+import "../styles/navbar.css"
 import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ theme, toggleTheme }) => {
@@ -15,7 +16,7 @@ const Navbar = ({ theme, toggleTheme }) => {
 
   return (
     <nav className="navbar">
-      <h1>Medical Records System</h1>
+      <h1>Kericho Hsp Medical System</h1>
       <div className="actions">
         <div className="nav-links">
           {/* Show Login and Register buttons only if the user is not logged in */}

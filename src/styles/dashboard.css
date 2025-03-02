@@ -59,6 +59,7 @@ body.dark .dashboard-card-text {
 .dashboard-container {
   margin-left: 250px; /* Sidebar width */
   padding: 2rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-image: url("https://cdn.pixabay.com/photo/2016/11/08/05/29/surgery-1807541_1280.jpg"); /* Add background image */
   background-size: cover; /* Ensure the image covers the entire container */
   background-position: center; /* Center the image */
@@ -68,7 +69,7 @@ body.dark .dashboard-card-text {
   overflow-x: hidden;
 }
 .dashboard-container h2 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   color:#007bff;
   margin-bottom: 1rem;
 }

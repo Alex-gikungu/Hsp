@@ -33,17 +33,22 @@ const Dashboard = () => {
         <div className="dashboard-card" onClick={() => handleCardClick("/doctors")}>
           <FaUsers className="dashboard-icon" />
           <h3 className="dashboard-card-title">Doctors</h3>
-          <p className="dashboard-card-text">15 Available</p>
+          <p className="dashboard-card-text">Available Doctors</p>
+        </div>
+        <div className="dashboard-card" onClick={() => handleCardClick("/aboutus")}>
+          <FaFileAlt className="dashboard-icon" />
+          <h3 className="dashboard-card-title">About Us</h3>
+          <p className="dashboard-card-text">View About Kericho HSP</p>
         </div>
         <div className="dashboard-card" onClick={() => handleCardClick("/appointments")}>
           <FaCalendarCheck className="dashboard-icon" />
           <h3 className="dashboard-card-title">Appointments</h3>
-          <p className="dashboard-card-text">20 Scheduled</p>
+          <p className="dashboard-card-text">Schedule Appointment </p>
         </div>
         <div className="dashboard-card" onClick={() => handleCardClick("/clinics")}>
           <FaClinicMedical className="dashboard-icon" />
           <h3 className="dashboard-card-title">Clinics</h3>
-          <p className="dashboard-card-text">10 Locations</p>
+          <p className="dashboard-card-text">Clincs </p>
         </div>
         <div className="dashboard-card" onClick={() => handleCardClick("/working-hours")}>
           <FaUserClock className="dashboard-icon" />
@@ -53,12 +58,7 @@ const Dashboard = () => {
         <div className="dashboard-card" onClick={() => handleCardClick("/services")}>
           <FaBriefcase className="dashboard-icon" />
           <h3 className="dashboard-card-title">Services</h3>
-          <p className="dashboard-card-text">5 Specialties</p>
-        </div>
-        <div className="dashboard-card" onClick={() => handleCardClick("/aboutus")}>
-          <FaFileAlt className="dashboard-icon" />
-          <h3 className="dashboard-card-title">Users</h3>
-          <p className="dashboard-card-text">View registered Users</p>
+          <p className="dashboard-card-text">Specialties Services</p>
         </div>
       </div>
     </main>

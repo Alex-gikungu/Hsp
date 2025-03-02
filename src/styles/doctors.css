@@ -8,11 +8,12 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #333;
+  color: #2563eb;
 }
 
 .back-button {
   margin-bottom: 20px;
+  margin-top: 50px;
   padding: 10px 15px;
   background-color: #007bff;
   color: white;

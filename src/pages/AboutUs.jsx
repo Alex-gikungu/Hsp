@@ -79,7 +79,7 @@ const AboutUs = () => {
           <div className="about-text">
             <h2>Contact Us</h2>
             <p>
-              For more information, please contact us at <strong>+1 (234) 567-890</strong> or email us at <strong>info@kerichohospital.com</strong>. Our customer service team is available to assist you with inquiries, appointment scheduling, and any other information you may need.
+              For more information, please contact us at <strong>+(254) 746-645-78</strong> or email us at <strong>info@kerichohospital.com</strong>. Our customer service team is available to assist you with inquiries, appointment scheduling, and any other information you may need.
             </p>
             <p>
               We also encourage feedback from our patients and the community to help us improve our services. Your health and satisfaction are our top priorities, and we are here to serve you.
