@@ -5,7 +5,7 @@
   width: 200px; /* Fixed width */
   height: calc(100vh - 60px); /* Adjusted height to fit below navbar */
   position: fixed;
-  top: 60px; /* Starts right below navbar */
+  top: 90px; /* Starts right below navbar */
   left: 0;
   padding: 1.5rem 1rem;
   display: flex;

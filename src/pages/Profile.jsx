@@ -27,7 +27,7 @@ const Profile = () => {
         const data = await response.json();
         setUserData(data);
         setAppointments(data.appointments || []);
-        setProfileImage(data.profile_image || "https://via.placeholder.com/150");
+        setProfileImage(data.profile_image || "https://img.icons8.com/?size=100&id=vSr2s7vrG5Hr&format=png&color=000000");
         setMessage("");
       } else {
         setMessage("No user found with this phone number.");

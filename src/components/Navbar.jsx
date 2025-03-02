@@ -1,6 +1,6 @@
 import { FaUserCircle, FaSun, FaMoon } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
-import "../styles/navbar.css"
+import "../styles/navbar.css";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = ({ theme, toggleTheme }) => {
@@ -16,10 +16,17 @@ const Navbar = ({ theme, toggleTheme }) => {
 
   return (
     <nav className="navbar">
-      <h1>Kericho Hsp Medical System</h1>
+      <div className="logo-container">
+        <img 
+          src="https://www.mercyone.org/patterns/dist/webdv/child/images/icons/find-a-doctor-wt.png" 
+          alt="Kericho Hospital Logo" 
+          className="hospital-logo" 
+        />
+        <h1>Kericho Hsp Medical System</h1>
+      </div>
+      
       <div className="actions">
         <div className="nav-links">
-          {/* Show Login and Register buttons only if the user is not logged in */}
           {!isLoggedIn && (
             <>
               <a href="/login" className="nav-btn">Login</a>
@@ -27,7 +34,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             </>
           )}
         </div>
-        {/* Show Logout button and user info only if the user is logged in */}
+
         {isLoggedIn && (
           <div className="user-actions">
             <span>Admin</span>
@@ -35,7 +42,6 @@ const Navbar = ({ theme, toggleTheme }) => {
           </div>
         )}
 
-        {/* Dark Mode Toggle Button */}
         <button className="theme-toggle" onClick={toggleTheme}>
           {theme === "light" ? <FaMoon /> : <FaSun />}
         </button>

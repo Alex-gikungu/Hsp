@@ -72,7 +72,7 @@ const Appointments = () => {
                 type="text"
                 id="patient_name"
                 name="patient_name"
-                value={formData.patient_id}
+                value={formData.patient_name}
                 onChange={handleChange}
                 required
               />
