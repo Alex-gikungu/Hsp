@@ -10,6 +10,3 @@ Currently, two official plugins are available:
 
 source venv/bin/activate
 
-wanjiru
-
-npm run d
