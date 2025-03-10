@@ -1,160 +1,103 @@
-/* General container styling */
+/* reports.css */
 .reports-container {
-  max-width: 1200px;
-  margin: 20px auto;
+  margin-left: 250px; /* Adjust if needed based on sidebar width */
   padding: 20px;
-  background: var(--bg-color, #fff);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  color: var(--text-color, #333);
+  background: #f4f4f9;
+  min-height: 100vh;
+  overflow-x: auto;
 }
 
-/* Page title */
-.page-title {
+.reports-container h1 {
   text-align: center;
+  color: #333;
   font-size: 24px;
-  font-weight: bold;
   margin-bottom: 20px;
-  color: var(--heading-color, #333);
 }
 
-/* Filter and search sections */
-.filter-section,
-.search-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 15px;
+.reports-container input,
+.reports-container select {
   padding: 10px;
-  background: var(--secondary-bg, #f8f9fa);
-  border-radius: 6px;
-}
-
-.filter-section label {
-  font-weight: bold;
-  color: var(--text-color, #333);
-}
-
-.filter-section select,
-.search-section input {
-  padding: 8px;
-  border: 1px solid var(--border-color, #ccc);
+  margin: 10px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  font-size: 14px;
-  background: var(--input-bg, #fff);
-  color: var(--text-color, #333);
+  font-size: 16px;
 }
 
-/* Report section styling */
-.report-section {
-  margin-top: 20px;
-  padding: 15px;
-  background: var(--secondary-bg, #f8f9fa);
-  border-radius: 6px;
+.reports-container input {
+  width: 250px;
 }
 
-.report-section h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: var(--heading-color, #444);
+.reports-container select {
+  cursor: pointer;
 }
 
-/* Table styling */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
-  background: var(--table-bg, #fff);
-  color: var(--text-color, #333);
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-table thead {
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
   background: #007bff;
   color: white;
 }
 
-table th, table td {
-  padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid var(--border-color, #ddd);
+tr:nth-child(even) {
+  background: #f9f9f9;
 }
 
-table tbody tr:hover {
-  background: var(--hover-bg, #f1f1f1);
+tr:hover {
+  background: #f1f1f1;
 }
 
-/* Pagination */
 .pagination {
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .pagination button {
-  padding: 8px 12px;
-  margin: 0 5px;
+  padding: 10px 15px;
+  margin: 5px;
   border: none;
   background: #007bff;
   color: white;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .pagination button:hover {
   background: #0056b3;
 }
 
-/* Export buttons */
-.export-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+.reports-container .export-buttons {
   margin-top: 20px;
+  text-align: center;
 }
 
-/* Base button styling */
-.export-btn {
-  background-color: #007bff; /* Blue */
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
+.reports-container .export-buttons button, 
+.reports-container .export-buttons a {
+  padding: 10px 15px;
+  margin: 5px;
   border: none;
-  border-radius: 5px;
+  background: #28a745;
+  color: white;
   cursor: pointer;
-  transition: 0.3s;
-  text-decoration: none;
-}
-
-.export-btn:hover {
-  opacity: 0.8;
-}
-
-/* PDF button */
-.pdf-btn {
-  background-color: #dc3545; /* Red */
-}
-
-/* CSV button */
-.csv-btn {
-  background-color: #28a745; /* Green */
-}
-
-/* Ensure the CSVLink does not interfere with the button */
-.export-link {
   text-decoration: none;
   display: inline-block;
+  border-radius: 5px;
 }
 
-/* Dark Mode Styling */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-color: #1e1e1e;
-    --text-color: #e0e0e0;
-    --heading-color: #ffffff;
-    --secondary-bg: #292929;
-    --border-color: #444;
-    --input-bg: #333;
-    --table-bg: #292929;
-    --hover-bg: #3a3a3a;
-  }
+.reports-container .export-buttons button:hover,
+.reports-container .export-buttons a:hover {
+  background: #218838;
 }

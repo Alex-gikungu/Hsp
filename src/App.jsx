@@ -22,6 +22,8 @@ import AboutUs from "./pages/AboutUs";
 import AppointmentsList from "./pages/AppointmentsList";
 import Footer from "./pages/Footer";
 import Chatbot from "./pages/Chatbot";
+import CapturedVitals from "./pages/CapturedVitals";
+import UserMedications from "./pages/DispensedMedication";
 
 import { FaSun, FaMoon } from "react-icons/fa";
 
@@ -63,6 +65,8 @@ const App = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/appointments-list" element={<AppointmentsList />} />
+        <Route path="/captured-vitals" element={<CapturedVitals/>} />
+        <Route path="/dispensed-medication" element={<UserMedications />} />  
       </Routes>
       <Chatbot />
       <Footer />

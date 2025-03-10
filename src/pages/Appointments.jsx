@@ -1,25 +1,40 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useLocation } from "react-router-dom";
-import Calendar from "react-calendar"; // Import Calendar
-import "react-calendar/dist/Calendar.css"; // Import calendar styles
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 import "../styles/appointments.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faUserDoctor, faCalendarDays, faFileLines } from "@fortawesome/free-solid-svg-icons";
 
 const Appointments = () => {
   const [formData, setFormData] = useState({
-    patient_id: "",
+    patient_name: "",
     doctor: "",
     date: "",
     reason: "",
   });
 
+  const [doctors, setDoctors] = useState([]); // Store doctors from API
   const [selectedDate, setSelectedDate] = useState(new Date());
 
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Fetch available doctors from the backend
+  useEffect(() => {
+    const fetchDoctors = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/doctors"); // Change to your actual endpoint
+        setDoctors(response.data);
+      } catch (error) {
+        console.error("Error fetching doctors:", error);
+      }
+    };
+    fetchDoctors();
+  }, []);
+
+  // Get doctor from query params if present
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const doctor = queryParams.get("doctor");
@@ -38,7 +53,7 @@ const Appointments = () => {
     try {
       await axios.post("http://localhost:5000/appointments", formData);
       alert("Appointment booked successfully!");
-      setFormData({ patient_id: "", doctor: "", date: "", reason: "" });
+      setFormData({ patient_name: "", doctor: "", date: "", reason: "" });
     } catch (error) {
       console.error("Error booking appointment:", error);
       alert("Failed to book appointment.");
@@ -65,7 +80,7 @@ const Appointments = () => {
         <div className="booking-form">
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label htmlFor="patient_id">
+              <label htmlFor="patient_name">
                 <FontAwesomeIcon icon={faUser} className="icon" /> Patient Name
               </label>
               <input
@@ -77,19 +92,28 @@ const Appointments = () => {
                 required
               />
             </div>
+
+            {/* Updated Doctor Selection */}
             <div className="form-group">
               <label htmlFor="doctor">
-                <FontAwesomeIcon icon={faUserDoctor} className="icon" /> Doctor
+                <FontAwesomeIcon icon={faUserDoctor} className="icon" /> Select Doctor
               </label>
-              <input
-                type="text"
+              <select
                 id="doctor"
                 name="doctor"
                 value={formData.doctor}
                 onChange={handleChange}
                 required
-              />
+              >
+                <option value="">-- Select a Doctor --</option>
+                {doctors.map((doc) => (
+                  <option key={doc.id} value={doc.name}>
+                    {doc.name} - {doc.specialization}
+                  </option>
+                ))}
+              </select>
             </div>
+
             <div className="form-group">
               <label htmlFor="date">
                 <FontAwesomeIcon icon={faCalendarDays} className="icon" /> Date
@@ -103,6 +127,7 @@ const Appointments = () => {
                 required
               />
             </div>
+            
             <div className="form-group">
               <label htmlFor="reason">
                 <FontAwesomeIcon icon={faFileLines} className="icon" /> Reason
@@ -116,6 +141,7 @@ const Appointments = () => {
                 required
               />
             </div>
+            
             <button type="submit" className="submit-button">
               Book Appointment
             </button>

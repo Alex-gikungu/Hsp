@@ -96,10 +96,59 @@
   color: #2c3e50;
 }
 
-/* Responsive Sidebar for Mobile */
+/* Responsive Sidebar for Tablets */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 180px; /* Slightly reduce width */
+    padding: 1rem;
+  }
+
+  .sidebar h2 {
+    font-size: 20px; /* Reduce title size */
+  }
+
+  .sidebar ul li a {
+    font-size: 1rem; /* Adjust font size */
+  }
+}
+
+/* Responsive Sidebar for Mobile (Hidden by Default) */
 @media (max-width: 768px) {
   .sidebar {
-      width: 200px;
-      padding: 1rem;
+    width: 220px; /* Increase width for mobile */
+    height: 100vh; /* Full height */
+    position: fixed;
+    top: 0;
+    left: -220px; /* Initially hidden */
+    transition: left 0.3s ease-in-out;
+  }
+
+  /* Sidebar Open State */
+  .sidebar.open {
+    left: 0;
+  }
+
+  /* Sidebar Items */
+  .sidebar ul li {
+    font-size: 1rem;
+  }
+
+  .sidebar h2 {
+    font-size: 18px;
+  }
+}
+
+/* Responsive Sidebar for Small Phones */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar h2 {
+    font-size: 16px;
+  }
+
+  .sidebar ul li {
+    font-size: 0.9rem;
   }
 }

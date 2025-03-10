@@ -1,0 +1,72 @@
+/* General Page Styling */
+.vitals-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  /* Header */
+  .vitals-container h2 {
+    text-align: center;
+    color: #0077b6;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Table Styling */
+  .vitals-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Table Headers */
+  .vitals-table thead {
+    background-color: #0077b6;
+    color: #ffffff;
+  }
+  
+  .vitals-table th {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  /* Table Rows */
+  .vitals-table tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .vitals-table tbody tr:nth-child(even) {
+    background-color: #f0faff;
+  }
+  
+  .vitals-table td {
+    padding: 10px;
+    color: #333;
+  }
+  
+  /* Hover Effect */
+  .vitals-table tbody tr:hover {
+    background-color: #cceeff;
+    transition: background 0.3s ease;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .vitals-container {
+      width: 95%;
+      padding: 15px;
+    }
+    
+    .vitals-table th, .vitals-table td {
+      padding: 8px;
+    }
+  }
+  

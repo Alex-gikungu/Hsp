@@ -28,21 +28,21 @@ const Login = () => {
     const dataToSend = isAdmin
       ? { username: formData.username, password: formData.password }
       : { phoneNumber: formData.phoneNumber, password: formData.password };
-
+  
     try {
       const response = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dataToSend),
       });
-
+  
       if (!response.ok) {
         const errorData = await response.text();
         console.error("Error response:", errorData);
         setMessage("Login failed. Please check your credentials.");
         return;
       }
-
+  
       const data = await response.json();
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify({ role: isAdmin ? "admin" : "user" })); // Set user role
@@ -50,12 +50,17 @@ const Login = () => {
         localStorage.setItem("phoneNumber", formData.phoneNumber);
       }
       setMessage("Login successful!");
+  
       navigate(isAdmin ? "/dashboard" : "/profile");
+      setTimeout(() => {
+        window.location.reload(); // Refresh the page after navigation
+      }, 500);
     } catch (error) {
       setMessage("An error occurred. Please try again.");
       console.error("Login error:", error);
     }
   };
+  
 
   return (
     <div className="login-container">

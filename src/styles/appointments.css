@@ -179,6 +179,69 @@ textarea:focus {
   font-weight: bold;
 }
 
+
+
+/* Styling for the dropdown container */
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  color: #333;
+  appearance: none; /* Removes default browser styles */
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
+}
+
+/* Style when hovering over the dropdown */
+.form-group select:hover {
+  border-color: #007bff;
+}
+
+/* Style when the dropdown is focused */
+.form-group select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Styling the dropdown options */
+.form-group select option {
+  padding: 10px;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Styling for the label */
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Icon positioning */
+.form-group {
+  position: relative;
+}
+
+/* FontAwesome Icon positioning for better alignment */
+.form-group .icon {
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #007bff;
+  font-size: 18px;
+}
+
+/* Dropdown inside the form */
+.form-group select {
+  padding-left: 40px; /* To make space for the icon */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .appointment-container {

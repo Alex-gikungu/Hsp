@@ -2,6 +2,7 @@
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: #f8f9fa;
 }
 
 .doctors-title {
@@ -9,11 +10,13 @@
   font-size: 2.5rem;
   margin-bottom: 20px;
   color: #2563eb;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .back-button {
   margin-bottom: 20px;
-  margin-top: 50px;
+  margin-top: 80px;
   padding: 10px 15px;
   background-color: #007bff;
   color: white;
@@ -21,10 +24,12 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
+  transition: background0.3s ease-in-out, transform 0.2s;
 }
 
 .back-button:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 .doctors-grid {
@@ -40,6 +45,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
 }
 
 .doctor-card:hover {
@@ -63,12 +69,14 @@
   font-size: 1.5rem;
   margin: 10px 0;
   color: #333;
+  font-weight: bold;
 }
 
 .doctor-specialization {
-  font-size: 1rem;
-  color: #777;
+  font-size: 1.1rem;
+  color: #555;
   margin-bottom: 15px;
+  font-style: italic;
 }
 
 .social-media-handles {
@@ -97,17 +105,19 @@
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .book-appointment-button:hover {
   background-color: #218838;
+  transform: scale(1.05);
 }
 
 .error-message {
   color: red;
   text-align: center;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
@@ -120,7 +130,7 @@
   }
 
   .doctor-specialization {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .social-icon {
